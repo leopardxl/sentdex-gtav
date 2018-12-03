@@ -1,7 +1,14 @@
+#https://stackoverflow.com/questions/14489013/simulate-python-keypresses-for-controlling-a-game
 import ctypes
 import time
 
 SendInput = ctypes.windll.user32.SendInput
+
+W = 0x11
+A = 0x1E
+S = 0x1F
+D = 0x20
+
 
 # C struct redefinitions
 PUL = ctypes.POINTER(ctypes.c_ulong)
@@ -51,8 +58,10 @@ def ReleaseKey(hexKeyCode):
     ctypes.windll.user32.SendInput(1, ctypes.pointer(x), ctypes.sizeof(x))
 
 # directx scan codes http://www.gamespp.com/directx/directInputKeyboardScanCodes.html
-while (True):
-    PressKey(0x11)
-    time.sleep(1)
-    ReleaseKey(0x11)
-    time.sleep(1)
+
+if __name__ == '__main__':
+    while (True):
+        PressKey(0x11)
+        time.sleep(1)
+        ReleaseKey(0x11)
+        time.sleep(1)

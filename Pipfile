@@ -10,6 +10,11 @@ requests = "*"
 numpy = "*"
 pillow = "*"
 opencv-python = "*"
+mss = "*"
+win32gui = "*"
+win32ui = "*"
+win32con = "*"
+win32api = "*"
 
 [requires]
 python_version = "3.7"
