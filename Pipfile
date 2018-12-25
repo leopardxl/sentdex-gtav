@@ -11,10 +11,7 @@ numpy = "*"
 pillow = "*"
 opencv-python = "*"
 mss = "*"
-win32gui = "*"
-win32ui = "*"
-win32con = "*"
-win32api = "*"
+pywin32 = "*"
 
 [requires]
 python_version = "3.7"

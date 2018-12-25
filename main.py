@@ -104,12 +104,12 @@ def control_system(m1, m2):
 
 def run():
     global DEBUG
-    box = SCREENS['gta-windowed']
+    box = SCREENS['ryancelcius']
     #countdown()
     last_time = time.time()
     while True:
         #screen = np.array(ImageGrab.grab(bbox=(0,40, 800, 640)))
-        screen = np.array(ImageGrab.grab(bbox=box))
+        screen = np.array(grab_screen(region=box))
         new_screen, original_image, m1, m2 = process_img(screen)
         cv2.imshow('window', new_screen)
         cv2.imshow('original', cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB))

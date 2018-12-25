@@ -5,7 +5,7 @@ import mss
 import mss.tools
 import time
 import cv2
-
+import w32grabscreen
 DEBUG = 1
 SCREENS = {
     'gta-windowed': (0, 40, 800, 640),
@@ -34,7 +34,7 @@ def run():
         cv_elapsed_time = time.time() - cv_start_time
 
         gs_start_time = time.time()
-        #gscreen = grab_screen(region=dim)
+        gscreen = w32grabscreen.grab_screen(region=dim)
         gs_elapsed_time = time.time() - gs_start_time
 
         mss_start_time = time.time()
@@ -48,6 +48,7 @@ def run():
 
         cv2.imshow('cv', screen)
         cv2.imshow('mss', mscreen)
+        cv2.imshow('w32', gscreen)
         #cv2.imshow('window2', cv2.cvtColor(np.array(screen), cv2.COLOR_BGR2RGB))
 
 
